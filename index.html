@@ -13,13 +13,25 @@
   <!-- Main Content -->
   <div class="container">
     <h1>ঈদ মোবারক</h1>
-    <p>আপনার নাম লিখুন </p>
+    <p>আপনার নাম লিখুন এবং ঈদের শুভেচ্ছা পেতে জমা দিন</p>
     <form id="nameForm">
       <input type="text" id="name" name="name" placeholder="আপনার নাম..." required>
-      <button type="submit">❤️</button>
+      <button type="submit">জমা দিন</button>
     </form>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    // Redirect to second page with user's name
+    document.getElementById('nameForm')?.addEventListener('submit', function (e) {
+      e.preventDefault(); // Prevent form from refreshing the page
+      const name = document.getElementById('name').value.trim();
+      if (name) {
+        localStorage.setItem('userName', name); // Save name in localStorage
+        window.location.href = 'eid-wishes.html'; // Redirect to second page
+      } else {
+        alert('অনুগ্রহ করে আপনার নাম লিখুন!');
+      }
+    });
+  </script>
 </body>
 </html>
