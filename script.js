@@ -1,3 +1,4 @@
+
 // Redirect to second page with user's name
 document.getElementById('nameForm')?.addEventListener('submit', function (e) {
   e.preventDefault(); // Prevent form from refreshing the page
