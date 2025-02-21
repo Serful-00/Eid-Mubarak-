@@ -1,4 +1,3 @@
-
 // Redirect to second page with user's name
 document.getElementById('nameForm')?.addEventListener('submit', function (e) {
   e.preventDefault(); // Prevent form from refreshing the page
@@ -34,5 +33,11 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('instagram')?.addEventListener('click', function (e) {
     e.preventDefault();
     alert('Instagram এ শেয়ার করতে পৃষ্ঠাটি স্ক্রিনশট করুন!');
+  });
+
+  document.getElementById('twitter')?.addEventListener('click', function (e) {
+    e.preventDefault();
+    const url = encodeURIComponent(window.location.href);
+    window.open(`https://twitter.com/intent/tweet?url=${url}`, '_blank');
   });
 });
